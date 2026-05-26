@@ -1,0 +1,516 @@
+:root {
+  --cream: #fff9ee;
+  --cream-deep: #f7ead0;
+  --card: #ffffff;
+  --green: #123e35;
+  --green-soft: #215e4c;
+  --gold: #d89428;
+  --gold-bright: #f2bd4f;
+  --terracotta: #b85432;
+  --ink: #262017;
+  --muted: #766a57;
+  --line: #eadbc0;
+  --shadow: 0 12px 35px rgba(68, 46, 12, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "Noto Sans Telugu", "Anek Telugu", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background:
+    radial-gradient(circle at 8% 8%, rgba(242, 189, 79, 0.18) 0 11%, transparent 11.2%),
+    radial-gradient(circle at 93% 30%, rgba(184, 84, 50, 0.09) 0 13%, transparent 13.2%),
+    linear-gradient(135deg, #fffaf1, #f9efd9);
+}
+
+.page-shell {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  background: rgba(255, 249, 238, 0.72);
+}
+
+.hero {
+  position: relative;
+  min-height: 480px;
+  padding: 26px clamp(20px, 6vw, 68px) 56px;
+  overflow: hidden;
+  color: #fffdf6;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(242, 189, 79, 0.32) 0 10%, transparent 10.5%),
+    radial-gradient(circle at 90% 64%, rgba(242, 189, 79, 0.15) 0 23%, transparent 23.5%),
+    linear-gradient(120deg, #10352e, #174b3d 56%, #245f4d);
+  border-radius: 0 0 38px 38px;
+}
+
+.hero::after {
+  position: absolute;
+  right: -120px;
+  bottom: -170px;
+  width: 420px;
+  height: 420px;
+  content: "";
+  border: 2px solid rgba(242, 189, 79, 0.28);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 48px rgba(242, 189, 79, 0.06);
+}
+
+.topbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  color: var(--green);
+  background: var(--gold-bright);
+  border-radius: 50%;
+  font: 700 26px/1 "Anek Telugu", sans-serif;
+}
+
+.topbar-label {
+  color: #ffe6ab;
+  font-size: 1.04rem;
+  font-weight: 500;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 660px;
+  margin-top: clamp(62px, 11vw, 90px);
+}
+
+.hero-kicker {
+  display: inline-flex;
+  margin: 0 0 16px;
+  padding: 7px 16px 4px;
+  color: #ffe4a1;
+  background: rgba(242, 189, 79, 0.11);
+  border: 1px solid rgba(242, 189, 79, 0.33);
+  border-radius: 999px;
+  font-size: 0.94rem;
+  letter-spacing: 0.04em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-family: "Anek Telugu", sans-serif;
+  font-size: clamp(3rem, 7.6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.tagline {
+  margin-bottom: 32px;
+  color: #efe6d1;
+  font-size: clamp(1.04rem, 2.3vw, 1.3rem);
+}
+
+.menu-link {
+  display: inline-flex;
+  padding: 14px 25px 11px;
+  color: var(--green);
+  background: var(--gold-bright);
+  border-radius: 999px;
+  font-family: "Anek Telugu", sans-serif;
+  font-size: 1.13rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 9px 22px rgba(216, 148, 40, 0.32);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.menu-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 26px rgba(216, 148, 40, 0.4);
+}
+
+.hero-pattern {
+  position: absolute;
+  right: clamp(32px, 9vw, 112px);
+  bottom: 68px;
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  opacity: 0.8;
+}
+
+.hero-pattern span {
+  display: block;
+  width: 13px;
+  background: var(--gold-bright);
+  border-radius: 999px;
+}
+
+.hero-pattern span:first-child {
+  height: 56px;
+}
+
+.hero-pattern span:nth-child(2) {
+  height: 88px;
+}
+
+.hero-pattern span:last-child {
+  height: 42px;
+}
+
+.menu-area {
+  padding: 0 clamp(16px, 5vw, 56px) 54px;
+}
+
+.search-panel {
+  position: relative;
+  z-index: 2;
+  margin: -40px 0 48px;
+  padding: clamp(22px, 4vw, 32px);
+  background: var(--card);
+  border: 1px solid #f2e8d6;
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+}
+
+.section-heading p {
+  margin-bottom: 5px;
+  color: var(--terracotta);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  margin-bottom: 25px;
+  color: var(--green);
+  font-family: "Anek Telugu", sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.compact h2 {
+  margin-bottom: 21px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  max-width: 580px;
+  padding: 5px 18px;
+  color: var(--gold);
+  background: #fffaf1;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+}
+
+.search-box span {
+  font-size: 1.7rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 13px 0 10px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.search-box input::placeholder {
+  color: #958874;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.filter-button,
+.empty-state button {
+  padding: 10px 18px 7px;
+  color: var(--green-soft);
+  background: #faf1df;
+  border: 1px solid #edddc0;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 500;
+  transition: all 170ms ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  color: #fff;
+  background: var(--green-soft);
+  border-color: var(--green-soft);
+}
+
+.featured {
+  margin-bottom: 54px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.feature-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 117px;
+  padding: 22px 21px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #fff, #fff5df);
+  border: 1px solid #f0e1c3;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(81, 57, 17, 0.06);
+}
+
+.feature-card::before {
+  position: absolute;
+  top: -33px;
+  right: -31px;
+  width: 92px;
+  height: 92px;
+  content: "";
+  background: rgba(242, 189, 79, 0.16);
+  border-radius: 50%;
+}
+
+.feature-card p {
+  margin-bottom: 5px;
+  color: var(--terracotta);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.feature-card h3 {
+  margin: 0;
+  color: var(--green);
+  font-family: "Anek Telugu", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.feature-card .price {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 12px;
+  color: var(--terracotta);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.all-menu {
+  margin-bottom: 34px;
+}
+
+.all-menu .section-heading h2 {
+  margin-bottom: 5px;
+}
+
+.results-text {
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.menu-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.menu-category {
+  padding: 22px 20px 14px;
+  background: var(--card);
+  border: 1px solid #f0e5d0;
+  border-radius: 22px;
+  box-shadow: 0 7px 22px rgba(81, 57, 17, 0.05);
+}
+
+.menu-category h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 11px;
+  color: var(--green);
+  font-family: "Anek Telugu", sans-serif;
+  font-size: 1.48rem;
+}
+
+.menu-category h3::after {
+  flex: 1;
+  height: 1px;
+  content: "";
+  background: var(--line);
+}
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 3px 10px;
+  border-bottom: 1px dashed #ede1cc;
+}
+
+.menu-item:last-child {
+  border-bottom: 0;
+}
+
+.item-name {
+  color: #332b20;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.item-price {
+  flex-shrink: 0;
+  padding: 5px 11px 3px;
+  color: var(--terracotta);
+  background: #fff5e5;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.empty-state {
+  padding: 45px 20px;
+  text-align: center;
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: 22px;
+}
+
+.empty-state p {
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.empty-state button {
+  color: #fff;
+  background: var(--green-soft);
+}
+
+.footer {
+  padding: 36px 20px 32px;
+  color: #edddbb;
+  text-align: center;
+  background: var(--green);
+  border-radius: 34px 34px 0 0;
+}
+
+.footer-title {
+  margin-bottom: 6px;
+  color: var(--gold-bright);
+  font-family: "Anek Telugu", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.footer p:not(.footer-title) {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 860px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: 442px;
+    padding-top: 20px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .hero-content {
+    margin-top: 64px;
+  }
+
+  .hero-pattern {
+    right: 25px;
+    bottom: 30px;
+    transform: scale(0.72);
+    transform-origin: bottom right;
+  }
+
+  .menu-area {
+    padding-bottom: 38px;
+  }
+
+  .search-panel {
+    margin-bottom: 38px;
+    border-radius: 21px;
+  }
+
+  .featured {
+    margin-bottom: 42px;
+  }
+
+  .featured-grid,
+  .menu-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 370px) {
+  h1 {
+    font-size: 2.55rem;
+  }
+
+  .hero-kicker {
+    font-size: 0.84rem;
+  }
+
+  .filter-button {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
