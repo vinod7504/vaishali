@@ -463,6 +463,108 @@ h1 {
   background: var(--green-soft);
 }
 
+.design-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 44px;
+  padding: clamp(22px, 4vw, 34px);
+  color: #fff9ec;
+  background: linear-gradient(135deg, #153d35, #245f4d);
+  border: 1px solid rgba(242, 189, 79, 0.28);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.design-contact-eyebrow {
+  margin-bottom: 7px;
+  color: var(--gold-bright);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.design-contact h2 {
+  margin-bottom: 10px;
+  color: #fffdf6;
+  font-family: "Anek Telugu", sans-serif;
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  line-height: 1.25;
+}
+
+.design-contact-intro {
+  max-width: 740px;
+  margin-bottom: 18px;
+  color: #f2e6cf;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.service-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 24px;
+  color: #fff8e8;
+  line-height: 1.55;
+}
+
+.service-list li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  content: "";
+  background: var(--gold-bright);
+  border-radius: 50%;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 190px;
+  padding: 24px;
+  color: var(--green);
+  background: #fff9ec;
+  border-radius: 18px;
+}
+
+.contact-label {
+  margin-bottom: 8px;
+  color: var(--terracotta);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.contact-owner {
+  margin-bottom: 14px;
+  color: var(--green);
+  font-family: "Anek Telugu", sans-serif;
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.contact-phone {
+  display: inline-flex;
+  width: fit-content;
+  padding: 10px 16px 8px;
+  color: var(--green);
+  background: var(--gold-bright);
+  border-radius: 999px;
+  font-size: 1.12rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .footer {
   padding: 36px 20px 32px;
   color: #edddbb;
@@ -524,6 +626,11 @@ h1 {
   .featured-grid,
   .menu-sections {
     grid-template-columns: 1fr;
+  }
+
+  .design-contact {
+    grid-template-columns: 1fr;
+    border-radius: 21px;
   }
 
   .feature-card {
